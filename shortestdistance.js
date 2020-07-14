@@ -1,10 +1,8 @@
 const shortestToChar = function (S, C) {
   const result = [];
-  const a = S.split('');
-  console.log(a);
-  for (let i = 0; i < a.length; i++) {
-    for (let j = 0; j < a.length; j++) {
-      if (a[i + j] === C) {
+  for (let i = 0; i < S.length; i++) {
+    for (let j = 0; j < S.length; j++) {
+      if (S[i + j] === C || S[i - j] === C) {
         result.push(j);
         break;
       }
@@ -12,6 +10,7 @@ const shortestToChar = function (S, C) {
   }
   return result;
 };
+
 const S = 'loveleetcode';
 const C = 'e';
 console.log(shortestToChar(S, C));
